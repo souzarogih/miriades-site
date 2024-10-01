@@ -1,0 +1,149 @@
+.footer {
+    width: 100%;
+    max-width: 100%;
+    background-color: #1976d2;
+    color: white;
+    padding: 20px;
+    font-family: "M PLUS 1p", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+
+}
+
+.footer__logo img {
+    width: 100%;
+    max-width: 344px;
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.footer__logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer__content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin-bottom: 40px;
+    box-sizing: border-box;
+}
+
+.footer__column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+.footer__social {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+
+    @media (max-width: 880px) {
+        margin-bottom: 20px;
+    }
+}
+
+.footer__column h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.footer__column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer__column ul li {
+    margin-bottom: 8px;
+}
+
+.footer__column ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.footer__column ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer__social-media {
+    display: flex;
+    gap: 10px;
+}
+
+#footer__social-media {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.footer__social-media li {
+    list-style: none;
+}
+
+.footer__social-media li svg{
+    margin-top: 5px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.footer__bottom {
+    text-align: center;
+    width: 100%;
+    background-color: #1565c0;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+.footer__bottom p {
+    font-size: 14px;
+    margin: 0;
+    color: #f1f1f1;
+}
+
+@media (max-width: 1030px) {
+    .footer__content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer__column {
+        margin-bottom: 20px;
+        align-items: center;
+    }
+
+    .footer__column ul {
+        text-align: center;
+    }
+}
+
+i {
+    margin-top: 5px;
+    width: 24px;
+    font-size: 24px;
+}
+
+
+h2{
+font-size: 24px;
+
+@media (max-width: 768px) {
+    font-size: 20px;
+}
+    
+}

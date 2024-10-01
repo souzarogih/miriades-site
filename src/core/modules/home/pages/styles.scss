@@ -1,0 +1,406 @@
+@import "../../../../scss/index.scss";
+.home {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+ 
+
+    &__content {
+        flex-grow: 1;  
+        width: 100%;
+
+        &--platform-section{
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            padding: 40px 5%;
+            background-color: transparent;
+
+            @media (max-width: 1024px) {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            &-info{
+                width: 45%;
+
+                @media (max-width: 1024px) {
+                    width: 100%;
+                }
+
+                h2 {
+                    font-family: "M PLUS 1p", sans-serif;
+                    font-size: 28px;
+                    font-weight: 700;
+                    margin-bottom: 16px;
+                    color: $ids-blue;
+                }
+                p {
+                    font-family: "M PLUS 1p", sans-serif;
+                    font-size: 16px;
+                    font-weight: 700;
+                    line-height: 1.5;
+                    color: $ids-blue;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+
+        &--solutions{
+            width: 48%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding-bottom: 20px;
+            background: linear-gradient(to left, $ids-dark-blue 25%, #ffffff 20%); 
+    
+            @media (max-width: 1024px) {
+                background: linear-gradient(to left, $ids-dark-blue 28%, #ffffff 20%); 
+                width: 100%;
+
+            }
+
+            &-card{
+                width: 80%;
+                display: flex;
+                align-items: flex-start;
+                padding: 20px;
+                background-color: #A6D0FFB2;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            &-content{
+                padding-left: 10px;
+                h3 {
+                    font-family: "M PLUS 1p", sans-serif;
+                    font-size: 20px;
+                    font-weight: bold;
+                    margin-bottom: 10px;
+                    color: $ids-blue;
+                }
+        
+                p {
+                    font-family: "M PLUS 1p", sans-serif;
+                    font-size: 16px;
+                    font-weight: 700;
+                    line-height: 1.4;
+                    color: $ids-dark-blue;
+                }
+            }
+        }
+
+ 
+
+        &--inovation--grid{
+            display: grid;
+            margin-left: 8%;
+            margin-right: 8%;
+            margin-top: 2%;
+            margin-bottom: 2%;
+            grid-template-columns: repeat(2, 1fr ) ;
+            gap: 2rem;
+        
+            @media (max-width: 600px) {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+
+        &--inovation--title{
+            padding-left: 5%;
+            padding-right: 5%;
+            margin-bottom: 13px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: start; 
+            text-align: center; 
+            flex-direction: row; 
+            color: $ids-blue;
+        }  
+
+        &--inovation--card{
+            background-color: $ids-cards-bg; 
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            flex-direction: column; 
+        }              
+        &--inovation--icon{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            padding: 10px;
+            border-radius: 50%;
+            background-color: $ids-white;
+            margin-right: 10px;
+        }
+
+        &--inovation--description{
+            position: relative;
+            background: linear-gradient(247.05deg, rgba(166, 208, 255, 0.3) 50.06%, rgba(255, 255, 255, 0.3) 96.83%);
+            margin-top: 29px;
+            gap: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-family: "M PLUS 1p", sans-serif;
+        
+        
+            @media (max-width: 450px) {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        
+            img {
+                @media (max-width: 600px) {
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    width: 100%;
+                }
+            }
+
+            p{
+                color: $ids-dark-blue;
+                font-weight: 700;
+                font-size: 16px;
+            }
+        
+            h2 {
+                font-weight: 700;
+                color: $ids-white;
+                font-size: 14px;
+        
+                @media (min-width: 600px) {
+                    font-size: 20px;
+                }
+        
+                @media (min-width: 1440px) {
+                    font-size: 24px;
+                }
+            }
+        
+            h1 {
+                margin-top: 71px;
+                font-weight: 700;
+                color: $ids-blue;
+                font-size: 16px;
+        
+                @media (max-width: 600px) {
+                    margin-top: 31px;
+                }
+        
+                @media (min-width: 600px) {
+                    font-size: 30px;
+                }
+            }
+        
+            &--background--left {
+                padding-top: 10px;
+                padding-left: 13%;
+                height: 95%;
+                position: absolute;
+                left: 0;
+                z-index: 0;
+ 
+        
+                @media (max-width: 1100px) {
+                    display: none;
+                }
+            }
+        
+            &--background--right {
+                position: absolute;
+                right: 0;
+                z-index: 1;
+            }
+ 
+        }
+
+        &--background {
+            position: relative;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            @media (max-width: 769px) {
+                img {
+                    width: 95%;
+                }
+            }
+
+            &-image {
+                position: absolute;
+                right: 0;
+                top: -30px;
+            }
+
+            &-description {
+                margin-top: 40px;
+                padding-left: 10px;
+                padding-right: 10px;
+
+                @media (max-width: 480px) {
+                    margin-top: 40px;
+                }
+
+                h1 {
+                    font-family: "M PLUS 1p", sans-serif;
+                    font-weight: bold;
+                    font-size: 64px;
+
+                    @media (max-width: 768px) {
+                        font-size: 48px;
+                    }
+
+                    @media (max-width: 480px) {
+                        font-size: 28px;
+                    }
+                }
+
+                p {
+                    font-family: "M PLUS 1p", sans-serif;
+                    font-weight: bold;
+                    font-size: 36px;
+                    color: $ids-gray;
+
+                    @media (max-width: 480px) {
+                        font-size: 20px;
+                    }
+                }
+
+                button {
+                    margin-top: 15px;
+                    background-color: $ids-blue;
+                    color: $ids-white;
+                    width: 292px;
+                    height: 51px;
+                    border: none;
+                    border-radius: 25px;
+                    font-weight: 700;
+                    font-size: 16px;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.323);
+                    cursor: pointer;
+                }
+            }
+        }
+
+        &--carousel{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 21px;
+            margin-bottom: 40px;
+
+            @media (max-width: 769px) {
+                padding-left: 20px;
+                padding-right: 20px;
+                margin-top: 20px;
+            }
+        }
+
+        &--slide--description {
+            margin-top: 19px;
+            gap: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-family: "M PLUS 1p", sans-serif;
+          
+            @media (max-width: 450px) {
+              padding-left: 10px;
+              padding-right: 10px;
+            }
+          
+            &--background {
+                width: 46%;
+                margin-top: 120px;
+                position: absolute;
+                left: 0;
+                z-index: 1;  
+              }
+              
+              &--solutions {
+                position: relative;
+                z-index: 3;  
+              }
+          
+            &--options {
+              display: flex;
+              flex-direction: row;
+              gap: 10px;
+              margin-bottom: 38px;
+              margin-top: 7px;
+ 
+
+              &--button {
+                width: 292px;
+                height: 51px;
+                border-radius: 25px;
+                background-color: $ids-dark-blue;
+                border: none;
+                color: $ids-white;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.323);
+
+                @media (max-width: 600px) {
+                  width: 160px;
+                }
+              }
+            }
+          
+            h2 {
+              font-weight: 700;
+              color: $ids-gray;
+              font-size: 14px;
+          
+              @media (min-width: 600px) {
+                font-size: 20px;
+              }
+          
+              @media (min-width: 1440px) {
+                font-size: 24px;
+              }
+            }
+          
+            h1 {
+              font-weight: 700;
+              color: $ids-blue;
+              font-size: 16px;
+          
+              @media (min-width: 600px) {
+                font-size: 18px;
+              }
+          
+              @media (min-width: 1440px) {
+                font-size: 30px;
+              }
+            }
+          
+            img {
+              @media (max-width: 600px) {
+                padding-left: 20px;
+                padding-right: 20px;
+                width: 100%;
+              }
+            }
+          }
+    }
+
+    &__footer {
+        width: 100%;
+        margin-top: auto;  
+    }
+
+ 
+}
