@@ -1,7 +1,8 @@
+@import "../../../scss/theme/index";
 .footer {
     width: 100%;
     max-width: 100%;
-    background-color: #1976d2;
+    background-color: $ids-blue;
     color: white;
     padding: 20px;
     font-family: "M PLUS 1p", sans-serif;
@@ -10,6 +11,7 @@
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
+    font-weight: 700;
 
 }
 

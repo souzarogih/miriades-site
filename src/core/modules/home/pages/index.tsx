@@ -20,9 +20,6 @@ import { AiFillPieChart } from "react-icons/ai";
 export const Home: React.FC = () => {
 
     const OPTIONS: EmblaOptionsType = { dragFree: true, loop: true }
-    const SLIDE_COUNT = 5
-    const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
-
     const images = [
         imgCarousel1,
         imgCarousel2,
@@ -158,7 +155,6 @@ export const Home: React.FC = () => {
                         </div>
                     </div>
                 </section>
-
 
             </section>
             <section className="home__footer">
