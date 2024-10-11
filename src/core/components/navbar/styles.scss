@@ -1,13 +1,12 @@
 @import "../../../scss/index.scss";
 .navbar {
     width: 100%;
-    height: 60px;
+    height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 30px;
     position: relative;
-    background-color: white;
+    background-color: $ids-white;
     padding-left: 40px;
     padding-right: 40px;
     position: relative;  
@@ -17,12 +16,11 @@
     @media (max-width: 880px) {
       padding-left: 20px;
       padding-right: 20px;
-      padding-bottom: 20px;
-      height: 50px;
+      height: 80px;
     }
   
     &__menu {
-      width: 45%;
+      width: 41%;
       display: flex;
       align-self: center;
       align-items: center;
@@ -34,17 +32,17 @@
   
       @media (max-width: 880px) {
         position: absolute;
-        top: 40px;
+        top: 80px;
         left: 0;
         width: 100%;
         flex-direction: column;
-        background-color: white;
+        background-color: $ids-white;
         max-height: 0;  
         overflow: hidden;
       }
   
       &--open {
-        background-color: white;
+        background-color: $ids-white;
         opacity: 1;
         position: absolute;
         z-index: 1;
@@ -52,8 +50,6 @@
       }
   
       &--options {
-        padding-left: 10px;
-        padding-right: 10px;
         width: 100%;
         display: flex;
         text-decoration: none;
@@ -126,7 +122,7 @@
       flex-direction: column;
       cursor: pointer;
       position: relative;  
-      z-index: 10;  
+      z-index: 1;  
     
   
       @media (max-width: 880px) {

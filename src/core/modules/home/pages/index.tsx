@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Footer from '../../../components/footer';
 import { Navbar } from '../../../components/navbar';
 import background from "../../../../assets/images/miriades-bg.svg";
@@ -18,6 +18,11 @@ import { FcTwoSmartphones } from "react-icons/fc";
 import { AiFillPieChart } from "react-icons/ai";
 
 export const Home: React.FC = () => {
+    const slideDescriptionRef = useRef<HTMLElement>(null);
+
+    const scrollToSlideDescription = () => {
+        slideDescriptionRef.current?.scrollIntoView({ behavior: 'smooth' });
+    };
 
     const OPTIONS: EmblaOptionsType = { dragFree: true, loop: true }
     const images = [
@@ -48,9 +53,9 @@ export const Home: React.FC = () => {
                 </div>
 
 
-                <section className="home__content--slide--description">
+                <section className="home__content--slide--description" id="sobre">
                     <h2>Queremos transformar sua forma de fazer negócio!</h2>
-                    <h1>Nossas soluções de software acompanham o crescimento do seu negócio.</h1>
+                    <h1 >Nossas soluções de software acompanham <br/> o crescimento do seu negócio.</h1>
                     <img src={background} className="home__content--slide--description--background" alt="" />
                     <img src={solutions} className="home__content--slide--description--solutions" alt="" />
                     <h1>Impulsione negócios e aumente vendas</h1>
@@ -61,7 +66,7 @@ export const Home: React.FC = () => {
 
                 </section>
 
-                <section className="home__content--inovation--description">
+                <section className="home__content--inovation--description" id="servicos">
                     <img src={bgLeft} className="home__content--inovation--description--background--left" alt="" />
                     <img src={bgRight} className="home__content--inovation--description--background--right" alt="" />
 
@@ -73,7 +78,7 @@ export const Home: React.FC = () => {
                                 <h3>Vendas online</h3>
                             </div>
 
-                            <p>Plataforma de vendas online interligada às vendas físicas, tudo centralizado em uma plataforma de gestão e
+                            <p id='cases'>Plataforma de vendas online interligada às vendas físicas, tudo centralizado em uma plataforma de gestão e
                                 acompanhamento da evolução do seu negócio.</p>
                         </div>
                         <div className="home__content--inovation--card">
