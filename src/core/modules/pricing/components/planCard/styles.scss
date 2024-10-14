@@ -2,6 +2,7 @@
 .plan-card {
     background-color: $ids-planCard-bg;
     padding: 20px;
+    margin: 20px 10px;
     border-radius: 15px;
     text-align: center;
     width: 292px;
@@ -12,7 +13,12 @@
     min-height: 100%;  
     position: relative;
     z-index: 2;
-    
+    transition: transform 0.3s ease, box-shadow 0.3s ease;  
+
+    &:hover {
+        transform: scale(1.05);  
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);  
+    }
 
     li{
         color: $ids-blue;
