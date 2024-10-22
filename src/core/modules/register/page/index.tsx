@@ -69,14 +69,14 @@ export const Register: React.FC = () => {
                 <div className="register__content--main">
                     <img className="register__content--main--bg" src={background} alt="Background" />
                     <div className="register__content-title">
-                        <h2>Formulário de Cadastro</h2>
+                        <strong>Formulário de Cadastro</strong>
                     </div>
 
                     <section className="register__content--section">
                         <div className="register__content--info">
                             <img className="register__content--info--bg" src={bgWhite} alt="Background" />
                             <div className="register__content--info--title">
-                                <h2>Vamos <strong>crescer</strong> juntos e ser <strong>visto</strong> pelos <strong>clientes?</strong></h2>
+                                <h2>Vamos <strong>crescer</strong> juntos e  ser <strong>visto</strong> pelos <strong>clientes</strong>?</h2>
                                 <p>Fale com nosso consultor de vendas.</p>
                                 <button><PiWhatsappLogo size={28} /> FALE COM CONSULTOR</button>
                                 <div className="register__content--info--contact">
@@ -119,12 +119,12 @@ export const Register: React.FC = () => {
                                     <div className="register__content--form--options--comercial">
                                         <legend>Deseja receber nosso contato?</legend>
                                         <div>
-                                            <section>
+                                            <section style={{display: 'flex', flexDirection: 'row', gap: 5}}>
                                                 <input type="checkbox" name="receiveCommercialContact" onChange={handleChange} checked={formData.receiveCommercialContact} />
                                                 <legend>Receber contato comercial</legend>
                                             </section>
 
-                                            <section>
+                                            <section style={{display: 'flex', flexDirection: 'row', gap: 5}}>
                                                 <input type="checkbox" name="receiveNews" onChange={handleChange} checked={formData.receiveNews} />
                                                 <legend>Receber novidades</legend>
                                             </section>
@@ -133,24 +133,24 @@ export const Register: React.FC = () => {
 
                                     <div className="register__content--form--options--email">
                                         <legend>Como gostaria de receber nosso contato?</legend>
-                                        <section>
+                                        <section style={{display: 'flex', flexDirection: 'row', gap: 5}}>
                                             <input type="checkbox" name="contactByEmail" onChange={handleChange} checked={formData.contactByEmail} />
                                             <legend>E-mails</legend>
                                         </section>
 
-                                        <section>
+                                        <section style={{display: 'flex', flexDirection: 'row', gap: 5}}>
                                             <input type="checkbox" name="contactBySms" onChange={handleChange} checked={formData.contactBySms} />
                                             <legend>SMSs</legend>
                                         </section>
 
-                                        <section>
+                                        <section style={{display: 'flex', flexDirection: 'row', gap: 5}}>
                                             <input type="checkbox" name="contactByWhatsappMessage" onChange={handleChange} checked={formData.contactByWhatsappMessage} />
                                             <legend>Mensagem whatsapp</legend>
                                         </section>
                                     </div>
                                 </div>
 
-                                <button id="submit" type="submit">ENVIAR</button>
+                                <button style={{cursor: 'pointer'}} onClick={handleSubmit} id="submit" type="submit">ENVIAR</button>
                             </form>
                         </div>
                     </section>

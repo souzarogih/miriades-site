@@ -5,20 +5,38 @@
     flex-direction: column;
     min-height: 100vh;
 
+    &__products {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+
+        img {
+            width: 100%;
+            max-width: 1200px;
+            height: auto;
+
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
+
+    }
+
     &__content {
         display: flex;
         flex-direction: row;
-        justify-content:center;  
+        justify-content: center;
         width: 100%;
         gap: 10px;
         margin-top: 61px;
-        margin-bottom: 31px;
-        position: relative;  
+        padding-bottom: 30px;
+        padding-top: 20px;
+        position: relative;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
-        padding-left: 0;  
+        padding-left: 0;
         padding-right: 0;
-        scroll-padding-left: 20px;  
+        scroll-padding-left: 20px;
 
         &::-webkit-scrollbar {
             display: none;
@@ -26,62 +44,64 @@
 
         @media (max-width: 853px) {
             gap: 10px;
-            scroll-padding-left: 10px; 
-            justify-content: flex-start; 
+            scroll-padding-left: 10px;
+            justify-content: flex-start;
         }
 
-        & > * {
+        &>* {
             scroll-snap-align: start;
             flex-shrink: 0;
-            min-width: 250px;  
-        }
-        &--bg {
-            position: absolute;
-            top: 0;   
-            right: 0;   
-            width: 60%;   
-            height: 100%;   
-            z-index: 1;   
-            object-fit: cover;   
+            min-width: 250px;
         }
 
-        &--solutions{
+        &--bg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            z-index: 1;
+            object-fit: cover;
+        }
+
+        &--solutions {
             width: 100%;
             background: linear-gradient(247.05deg, rgba(166, 208, 255, 0.3) 50.06%, rgba(255, 255, 255, 0.3) 96.83%);
             display: flex;
-            flex-direction: row;  
+            flex-direction: row;
             align-items: flex-start;
             justify-content: center;
             gap: 44px;
             padding-top: 20px;
 
-            @media (max-width: 768px) { 
-                flex-direction: column;  
-                gap: 10px;  
-                align-items: center;  
-              }
+            @media (max-width: 768px) {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
 
-            h3{
+            h3 {
                 padding-bottom: 15px;
             }
 
-            &--left{
+            &--left {
                 gap: 30px;
 
 
             }
 
-            &--left--card, &--right--card{
+            &--left--card,
+            &--right--card {
                 background-color: #A6D0FF36;
                 width: 506px;
                 margin-bottom: 30px;
 
-                @media (max-width: 768px) { 
+                @media (max-width: 768px) {
                     width: 306px;
 
-                  }
+                }
 
-                &--title{
+                &--title {
                     background-color: #9BCAFF;
                     border-radius: 12px 12px 0px 0px;
                     width: 100%;
@@ -90,7 +110,7 @@
                     text-align: center;
                 }
 
-                &--description{
+                &--description {
                     padding-left: 40px;
                     padding-right: 40px;
                     padding-top: 10px;
@@ -114,13 +134,13 @@
         flex-direction: column;
         text-align: center;
 
- 
-        h4{
+
+        h4 {
             font-size: 32px;
             font-weight: 700;
         }
 
-        p{
+        p {
             font-weight: 600;
             font-size: 20px;
         }
@@ -135,7 +155,7 @@
             font-size: 16px;
         }
 
-        &--button{
+        &--button {
             height: 51px;
             width: 292px;
             color: $ids-white;
@@ -180,7 +200,7 @@
             }
         }
 
-        &--button{
+        &--button {
             height: 51px;
             width: 292px;
             color: $ids-white;

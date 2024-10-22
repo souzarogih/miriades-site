@@ -1,4 +1,41 @@
 @font-face {
-    font-family: M_Plus_1p-bold;
+    font-family: 'M_Plus_1p';
+    font-weight: 700; /* Bold */
     src: url("../../assets/fonts/M_PLUS_1p/MPLUS1p-Bold.ttf");
+}
+
+@font-face {
+    font-family: 'M_Plus_1p';
+    font-weight: 800; /* Extra Bold */
+    src: url("../../assets/fonts/M_PLUS_1p/MPLUS1p-ExtraBold.ttf");
+}
+
+@font-face {
+    font-family: 'M_Plus_1p';
+    font-weight: 900; /* Black */
+    src: url("../../assets/fonts/M_PLUS_1p/MPLUS1p-Black.ttf");
+}
+
+@font-face {
+    font-family: 'M_Plus_1p';
+    font-weight: 300; /* Light */
+    src: url("../../assets/fonts/M_PLUS_1p/MPLUS1p-Light.ttf");
+}
+
+@font-face {
+    font-family: 'M_Plus_1p';
+    font-weight: 500; /* Medium */
+    src: url("../../assets/fonts/M_PLUS_1p/MPLUS1p-Medium.ttf");
+}
+
+@font-face {
+    font-family: 'M_Plus_1p';
+    font-weight: 400; /* Regular */
+    src: url("../../assets/fonts/M_PLUS_1p/MPLUS1p-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'M_Plus_1p';
+    font-weight: 200; /* Thin */
+    src: url("../../assets/fonts/M_PLUS_1p/MPLUS1p-Thin.ttf");
 }

@@ -4,6 +4,7 @@ import Footer from '../../../components/footer';
 import './styles.scss';
 import PlanCard from '../components/planCard';
 import background from "../../../../assets/images/miriades-bg.svg";
+import products from "../../../../assets/images/products.svg";
 
 export const Pricing: React.FC = () => {
     const [activeTab, setActiveTab] = useState<'precos' | 'solucoes'>('precos');
@@ -156,13 +157,13 @@ export const Pricing: React.FC = () => {
                                             <li>Agendamento de consultas</li>
                                             <li>Controle receita</li>
                                             <li>Gestão de planos</li>
-                                             
+
                                         </ul>
                                     </div>
 
                                 </div>
                             </section>
-                            
+
                             <section className="pricing__content--solutions--right">
                                 <h3>SOLUÇÕES EDUCACIONAIS</h3>
                                 <div className="pricing__content--solutions--right--card">
@@ -180,7 +181,7 @@ export const Pricing: React.FC = () => {
                                         </ul>
                                     </div>
                                 </div>
- 
+
                                 <h3>SOLUÇÕES PARA NEGÓCIOS</h3>
                                 <div className="pricing__content--solutions--right--card">
                                     <div className="pricing__content--solutions--right--card--title">
@@ -214,7 +215,12 @@ export const Pricing: React.FC = () => {
                 <button className="pricing__subtitle--button">FALAR COM CONSULTOR</button>
             </section>
 
+            <section className="pricing__products">
+                <img src={products} alt="Products" />
+            </section>
+
             <section className="pricing__footer">
+                <h3 style={{paddingBottom: 29, textAlign: 'center'}} >Miriades Startup Innovation Tech - Todos os direitos reservados 2023</h3 >
                 <Footer />
             </section>
         </section>
