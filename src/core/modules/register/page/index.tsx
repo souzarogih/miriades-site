@@ -26,7 +26,7 @@ export const Register: React.FC = () => {
     });
 
     const [errorMessage, setErrorMessage] = useState('');
-
+    const [isModalOpen, setIsModalOpen] = useState(false); // Estado para o modal
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value, type } = e.target;
@@ -48,10 +48,12 @@ export const Register: React.FC = () => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:8080/miriades/registration', formData);
+            const response = await axios.post('https://mch6m1m2cc.execute-api.us-east-1.amazonaws.com/v1/todos', formData);
             console.log('Dados enviados com sucesso:', response.data);
+            setIsModalOpen(true);  
         } catch (error) {
             console.error('Erro ao enviar os dados:', error);
+            setErrorMessage('Ocorreu um erro ao enviar o formulário. Tente novamente.');
         }
     };
 
@@ -76,7 +78,7 @@ export const Register: React.FC = () => {
                         <div className="register__content--info">
                             <img className="register__content--info--bg" src={bgWhite} alt="Background" />
                             <div className="register__content--info--title">
-                                <h2>Vamos <strong>crescer</strong> juntos e  ser <strong>visto</strong> pelos <strong>clientes</strong>?</h2>
+                                <h2>Vamos <strong>crescer</strong> juntos e ser <strong>visto</strong> pelos <strong>clientes</strong>?</h2>
                                 <p>Fale com nosso consultor de vendas.</p>
                                 <button><PiWhatsappLogo size={28} /> FALE COM CONSULTOR</button>
                                 <div className="register__content--info--contact">
@@ -87,78 +89,92 @@ export const Register: React.FC = () => {
                                 </div>
                             </div>
                         </div>
+                        {/* Modal de confirmação */}
+                        {isModalOpen ? (
+                            <div className="modal" style={{width: '60%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center'}}>
+                                <div className="modal__content">
+                                    <h2>Formulário enviado com sucesso!</h2>
+                                    <p>Obrigado por se cadastrar. Entraremos em contato em breve.</p>
+                                </div>
+                            </div>
+                        ) :
+                            <div className="register__content--form">
+                                <form onSubmit={handleSubmit}>
+                                    <label htmlFor="email">E-mail <strong>*</strong></label>
+                                    <input type="email" id="email" name="email" required onChange={handleChange} value={formData.email} />
 
-                        <div className="register__content--form">
-                            <form onSubmit={handleSubmit}>
-                                <label htmlFor="email">E-mail <strong>*</strong></label>
-                                <input type="email" id="email" name="email" required onChange={handleChange} value={formData.email} />
+                                    <label htmlFor="phones">Telefone de contato <strong>*</strong></label>
+                                    <input type="number" id="phones" name="phones" required onChange={handleChange} value={formData.phones} />
 
-                                <label htmlFor="phones">Telefone de contato <strong>*</strong></label>
-                                <input type="number" id="phones" name="phones" required onChange={handleChange} value={formData.phones} />
+                                    <label htmlFor="fullName">Nome completo <strong>*</strong></label>
+                                    <input type="text" id="fullName" name="fullName" required onChange={handleChange} value={formData.fullName} />
 
-                                <label htmlFor="fullName">Nome completo <strong>*</strong></label>
-                                <input type="text" id="fullName" name="fullName" required onChange={handleChange} value={formData.fullName} />
+                                    <label htmlFor="businessName">Nome do negócio</label>
+                                    <input type="text" id="businessName" name="businessName" onChange={handleChange} value={formData.businessName} />
 
-                                <label htmlFor="businessName">Nome do negócio</label>
-                                <input type="text" id="businessName" name="businessName" onChange={handleChange} value={formData.businessName} />
+                                    <label htmlFor="documentNumber">CPF/CNPJ</label>
+                                    <input type="number" id="documentNumber" name="documentNumber" onChange={handleChange} value={formData.documentNumber} />
 
-                                <label htmlFor="documentNumber">CPF/CNPJ</label>
-                                <input type="number" id="documentNumber" name="documentNumber" onChange={handleChange} value={formData.documentNumber} />
+                                    <section className="register__content--form--message">
+                                        <label htmlFor="message">Deixe sua mensagem</label>
+                                        <textarea id="message" name="message" onChange={handleChange} value={formData.message}></textarea>
 
-                                <section className="register__content--form--message">
-                                    <label htmlFor="message">Deixe sua mensagem</label>
-                                    <textarea id="message" name="message" onChange={handleChange} value={formData.message}></textarea>
+                                        <div className="register__content--form--message--group">
+                                            <input type="checkbox" name="termAgreement" required onChange={handleChange} checked={formData.termAgreement} />
+                                            <p>Ao enviar o formulário estou de acordo com os termos de <a href="">Política de Privacidade.</a></p>
+                                        </div>
+                                    </section>
 
-                                    <div className="register__content--form--message--group">
-                                        <input type="checkbox" name="termAgreement" required onChange={handleChange} checked={formData.termAgreement} />
-                                        <p>Ao enviar o formulário estou de acordo com os termos de <a href="">Política de Privacidade.</a></p>
-                                    </div>
-                                </section>
+                                    <div className="register__content--form--options">
+                                        <div className="register__content--form--options--comercial">
+                                            <legend>Deseja receber nosso contato?</legend>
+                                            <div>
+                                                <section style={{ display: 'flex', flexDirection: 'row', gap: 5 }}>
+                                                    <input type="checkbox" name="receiveCommercialContact" onChange={handleChange} checked={formData.receiveCommercialContact} />
+                                                    <legend>Receber contato comercial</legend>
+                                                </section>
 
-                                <div className="register__content--form--options">
-                                    <div className="register__content--form--options--comercial">
-                                        <legend>Deseja receber nosso contato?</legend>
-                                        <div>
-                                            <section style={{display: 'flex', flexDirection: 'row', gap: 5}}>
-                                                <input type="checkbox" name="receiveCommercialContact" onChange={handleChange} checked={formData.receiveCommercialContact} />
-                                                <legend>Receber contato comercial</legend>
+                                                <section style={{ display: 'flex', flexDirection: 'row', gap: 5 }}>
+                                                    <input type="checkbox" name="receiveNews" onChange={handleChange} checked={formData.receiveNews} />
+                                                    <legend>Receber novidades</legend>
+                                                </section>
+                                            </div>
+                                        </div>
+
+                                        <div className="register__content--form--options--email">
+                                            <legend>Como gostaria de receber nosso contato?</legend>
+                                            <section style={{ display: 'flex', flexDirection: 'row', gap: 5 }}>
+                                                <input type="checkbox" name="contactByEmail" onChange={handleChange} checked={formData.contactByEmail} />
+                                                <legend>E-mails</legend>
                                             </section>
 
-                                            <section style={{display: 'flex', flexDirection: 'row', gap: 5}}>
-                                                <input type="checkbox" name="receiveNews" onChange={handleChange} checked={formData.receiveNews} />
-                                                <legend>Receber novidades</legend>
+                                            <section style={{ display: 'flex', flexDirection: 'row', gap: 5 }}>
+                                                <input type="checkbox" name="contactBySms" onChange={handleChange} checked={formData.contactBySms} />
+                                                <legend>SMSs</legend>
+                                            </section>
+
+                                            <section style={{ display: 'flex', flexDirection: 'row', gap: 5 }}>
+                                                <input type="checkbox" name="contactByWhatsappMessage" onChange={handleChange} checked={formData.contactByWhatsappMessage} />
+                                                <legend>Mensagem whatsapp</legend>
                                             </section>
                                         </div>
                                     </div>
 
-                                    <div className="register__content--form--options--email">
-                                        <legend>Como gostaria de receber nosso contato?</legend>
-                                        <section style={{display: 'flex', flexDirection: 'row', gap: 5}}>
-                                            <input type="checkbox" name="contactByEmail" onChange={handleChange} checked={formData.contactByEmail} />
-                                            <legend>E-mails</legend>
-                                        </section>
+                                    <button style={{ cursor: 'pointer' }} onClick={handleSubmit} id="submit" type="submit">ENVIAR</button>
+                                </form>
+                            </div>
 
-                                        <section style={{display: 'flex', flexDirection: 'row', gap: 5}}>
-                                            <input type="checkbox" name="contactBySms" onChange={handleChange} checked={formData.contactBySms} />
-                                            <legend>SMSs</legend>
-                                        </section>
+                        }
 
-                                        <section style={{display: 'flex', flexDirection: 'row', gap: 5}}>
-                                            <input type="checkbox" name="contactByWhatsappMessage" onChange={handleChange} checked={formData.contactByWhatsappMessage} />
-                                            <legend>Mensagem whatsapp</legend>
-                                        </section>
-                                    </div>
-                                </div>
-
-                                <button style={{cursor: 'pointer'}} onClick={handleSubmit} id="submit" type="submit">ENVIAR</button>
-                            </form>
-                        </div>
                     </section>
                 </div>
             </section>
+
             <section className="register__footer">
                 <Footer />
             </section>
+
+
         </section>
     );
 };
