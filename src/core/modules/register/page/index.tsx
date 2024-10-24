@@ -49,6 +49,7 @@ export const Register: React.FC = () => {
         e.preventDefault();
         try {
             const response = await axios.post('https://mch6m1m2cc.execute-api.us-east-1.amazonaws.com/v1/todos', formData);
+            //const response = await axios.post('http://localhost:8080/miriades/registration', formData);
             console.log('Dados enviados com sucesso:', response.data);
             setIsModalOpen(true);  
         } catch (error) {
